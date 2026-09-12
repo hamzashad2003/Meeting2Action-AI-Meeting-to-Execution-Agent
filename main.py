@@ -209,6 +209,25 @@ CUSTOM_CSS = """
         background-color: #1E293B !important;
         border: 1px dashed #334155 !important;
     }
+    section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzoneInstructions"] * {
+        color: #E2E8F0 !important;
+    }
+    section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzoneInstructions"] small {
+        color: #94A3B8 !important;
+    }
+    section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] button {
+        background-color: #334155 !important;
+        color: #F1F5F9 !important;
+        border: 1px solid #475569 !important;
+    }
+    section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] button:hover {
+        background-color: #475569 !important;
+    }
+    section[data-testid="stSidebar"] [data-testid="stCheckbox"] label,
+    section[data-testid="stSidebar"] [data-testid="stCheckbox"] label p,
+    section[data-testid="stSidebar"] [data-testid="stCheckbox"] label span {
+        color: #E2E8F0 !important;
+    }
     section[data-testid="stSidebar"] [data-baseweb="select"] > div {
         background-color: #1E293B !important;
         border-color: #334155 !important;
@@ -386,9 +405,6 @@ with st.sidebar:
     smtp_port = st.text_input("SMTP Port", value=os.getenv("SMTP_PORT", "587")) if enable_email else None
     smtp_user = st.text_input("SMTP Username / Email", value=os.getenv("SMTP_USER", "")) if enable_email else None
     smtp_password = st.text_input("SMTP Password / App Password", type="password", value=os.getenv("SMTP_PASSWORD", "")) if enable_email else None
-
-    st.markdown("---")
-    st.caption("Built for hackathon demo · Meeting2Action")
 
 # ---------------------------------------------------------------------------
 # Hero header
